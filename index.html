@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+
+</head>
+
+<body id="flex">
+    <div id="container">
+        <header>Chain-reaction</header>
+        <table id="table"></table>
+        <div id="chart" onclick="chart()">Start game</div>
+    </div>
+    <button class="collapsible" onclick="collapsible()" >How to play:</button>
+    <ol class="rules-list" id="list">
+        <li>The gameplay takes place in an <span><span><span><math><semantics><mrow><mi>m</mi><mo>×</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">m \times n</annotation></semantics></math></span><span aria-hidden="true"><span><span style="height: 0.66666em; vertical-align: -0.08333em;"></span><spanmathdefault">m</span><span style="margin-right: 0.222222em;"></span><span>×</span><span style="margin-right: 0.222222em;"></span></span><span><span style="height: 0.43056em; vertical-align: 0em;"></span><span>n</span></span></span></span></span> board. The most commonly used size of the board is <span><span><span><math><semantics><mrow><mn>9</mn><mo>×</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">9 \times 6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span><span style="height: 0.72777em; vertical-align: -0.08333em;"></span><span>9</span><span style="margin-right: 0.222222em;"></span><span class="mbin">×</span><span style="margin-right: 0.222222em;"></span></span><span><span style="height: 0.64444em; vertical-align: 0em;"></span><span>6</span></span></span></span></span>.</li>
+        <li>For each cell in the board, we define a critical mass. The critical mass is equal to the number of orthogonally adjacent cells. That would be 4 for usual cells, 3 for cells in the edge and 2 for cells in the corner.</li>
+        <li>All cells are initially empty. The Red and the Green player take turns to place "orbs" of their corresponding colors. The Red player can only place an (red) orb in an empty cell or a cell which already contains one or more red orbs. When two or more orbs are placed in the same cell, they stack up.</li>
+        <li>When a cell is loaded with a number of orbs equal to its critical mass, the stack immediately explodes. As a result of the explosion, to each of the orthogonally adjacent cells, an orb is added and the initial cell looses as many orbs as its critical mass. The explosions might result in overloading of an adjacent cell and the chain reaction of explosion continues until every cell is stable.</li>
+        <li>When a red cell explodes and there are green cells around, the green cells are converted to red and the other rules of explosions still follow. The same rule is applicable for other colors.</li>
+        <li>The winner is the one who eliminates every other player's orbs.</li>
+    </ol>
+    <script src="./index.js"></script>
+</body>
+
+</html>
